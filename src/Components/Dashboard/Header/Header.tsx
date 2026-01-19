@@ -18,7 +18,9 @@ export default function Header() {
   const { isOpen, setIsOpen } = useDashboardHook();
 
   return (
-    <div className="h-16.25 bg-white shadow-sm px-6 flex items-center justify-between">
+    <div
+      className={`h-16.25 bg-white shadow-sm px-6 flex items-center justify-between fixed top-0 ${isOpen ? "left-62.5" : "left-17"} right-0 z-50`}
+    >
       {/* left */}
       <div className="flex items-center gap-7 ">
         {/* menu icon */}

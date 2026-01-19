@@ -42,22 +42,22 @@ const sidebarLinks: SidebarTypes[] = [
   },
   {
     label: "to do",
-    path: "/hhesh",
+    path: "/dashboard/todos",
     icon: SquareCheckBig,
   },
   {
     label: "Events",
-    path: "/fiywf",
+    path: "/dashboard/events",
     icon: Calendar,
   },
   {
     label: "Projects",
-    path: "/juwihew",
+    path: "/dashboard/projects",
     icon: Command,
   },
   {
     label: "Tasks",
-    path: "/iue",
+    path: "/dashboard/tasks",
     icon: CircleCheckBig,
   },
   {
@@ -67,7 +67,7 @@ const sidebarLinks: SidebarTypes[] = [
   },
   {
     label: "Notes",
-    path: "/iujheiw",
+    path: "/dashboard/notes",
     icon: PanelBottom,
   },
   {
@@ -76,12 +76,12 @@ const sidebarLinks: SidebarTypes[] = [
     icon: MessageCircle,
   },
   {
-    label: "Messages",
+    label: "Teams",
     icon: Users,
     subMenus: [
       {
         label: "Team members",
-        path: "/uwidgui",
+        path: "/dashboard/team-members",
       },
       {
         label: "Time cards",
@@ -89,7 +89,7 @@ const sidebarLinks: SidebarTypes[] = [
       },
       {
         label: "Leave",
-        path: "/ueh",
+        path: "/dashboard/leave",
       },
       {
         label: "timeline",
@@ -103,12 +103,12 @@ const sidebarLinks: SidebarTypes[] = [
   },
   {
     label: "Reports",
-    path: "/hujhdf",
+    path: "/dashboard/reports",
     icon: PieChart,
   },
   {
     label: "Files",
-    path: "/kjiefw",
+    path: "/dashboard/files",
     icon: Folder,
   },
   {
@@ -127,13 +127,12 @@ const sidebarLinks: SidebarTypes[] = [
 export default function DsahboardLayout() {
   const { isOpen } = useDashboardHook();
 
-  console.log(isOpen);
   const [subMenuIndex, setsubMenuIndex] = useState<number | null>(null);
   return (
     <div className="flex ">
       {/* left sidebar */}
       <div
-        className={`${isOpen ? "w-62.5" : "w-17"}  min-h-screen bg-primary `}
+        className={`${isOpen ? "w-62.5" : "w-17"}  min-h-screen bg-primary  fixed left-0 top-0 z-30`}
       >
         {/* logo */}
         <div
@@ -152,7 +151,7 @@ export default function DsahboardLayout() {
 
         {/* sidebar links container */}
 
-        <div className="text-[#ffffffcc] space-y-2 p-2.5 text-sm select-none">
+        <div className="text-[#ffffffcc] space-y-2 p-2.5 text-sm select-none capitalize">
           {sidebarLinks.map((sidebarLink, index) => {
             if (sidebarLink.subMenus || !sidebarLink.path) {
               let showSubMenu = subMenuIndex === index;
@@ -189,13 +188,18 @@ export default function DsahboardLayout() {
 
                   {/* submenus */}
                   {showSubMenu && isOpen && (
-                    <div className="flex flex-col mt-3">
+                    <div className="flex flex-col mt-3 space-y-2">
                       {sidebarLink.subMenus.map((submenu, ind) => (
                         <div>
                           <div key={ind}>
-                            <NavLink to={submenu.path}>
+                            <NavLink
+                              to={submenu.path}
+                              className={({ isActive }) =>
+                                `flex items-center gap-4 px-3.5 py-2.5 cursor-pointer ${isActive && "bg-[#ffffff33] font-medium text-white"}   rounded-md hover:bg-[#ffffff33] hover:text-white whitespace-nowrap`
+                              }
+                            >
                               {" "}
-                              <div className="flex items-center gap-2  pl-5 px-3.5 py-2.5 hover:bg-[#ffffff33] hover:text-white rounded-md">
+                              <div className="flex items-center gap-3 pl-4">
                                 {/* icon */}
                                 <div>
                                   <Minus size={12} />
@@ -236,10 +240,10 @@ export default function DsahboardLayout() {
       </div>
 
       {/* right content  */}
-      <div className=" flex-1 ">
+      <div className=" flex-1 relative w-full">
         <Header />
 
-        <div className="p-5">
+        <div className={`p-8 mt-17 max-w-full ${isOpen ? "ml-62.5" : "ml-17"}`}>
           <Outlet />
         </div>
       </div>

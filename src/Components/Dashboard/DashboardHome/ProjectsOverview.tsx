@@ -1,17 +1,48 @@
 import { Briefcase, Lock, Plus } from "lucide-react";
 import { Cell, Pie, PieChart, ResponsiveContainer, Tooltip } from "recharts";
+
+/* ---------- Data ---------- */
 const projectData = [
   { name: "Active", value: 12, color: "#4f46e5" },
   { name: "On Hold", value: 3, color: "#f59e0b" },
   { name: "Completed", value: 24, color: "#10b981" },
 ];
 
+const totalProjects = projectData.reduce((sum, item) => sum + item.value, 0);
+
+/* ---------- Simple Tooltip ---------- */
+const CustomTooltip = ({ active, payload }: any) => {
+  if (!active || !payload || !payload.length) return null;
+
+  const { name, value, color } = payload[0].payload;
+
+  return (
+    <div className="bg-white px-3 py-2 rounded-md border shadow-sm text-sm">
+      <div className="flex items-center gap-2">
+        <span
+          className="w-2 h-2 rounded-full"
+          style={{ backgroundColor: color }}
+        />
+        <span className="font-medium text-slate-800">{name}</span>
+      </div>
+      <div className="text-slate-600">Projects: {value}</div>
+    </div>
+  );
+};
+
+/* ---------- Pie Label ---------- */
+const renderLabel = ({ name, percent }: { name: string; percent: number }) =>
+  `${name} ${(percent * 100).toFixed(0)}%`;
+
+/* ---------- Component ---------- */
 export default function ProjectsOverview() {
   return (
-    <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+    <div className="bg-white p-6 w-full rounded-xl shadow-sm border border-slate-100">
       <SectionHeader title="Projects Overview" icon={Briefcase} />
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-        <div className="h-[240px]">
+        {/* Chart */}
+        <div className="h-60">
           <ResponsiveContainer width="100%" height="100%">
             <PieChart>
               <Pie
@@ -20,15 +51,43 @@ export default function ProjectsOverview() {
                 outerRadius={80}
                 paddingAngle={5}
                 dataKey="value"
+                label={renderLabel}
+                labelLine={false}
               >
                 {projectData.map((entry, index) => (
                   <Cell key={`cell-${index}`} fill={entry.color} />
                 ))}
               </Pie>
-              <Tooltip />
+
+              {/* Center Text */}
+              <text
+                x="50%"
+                y="50%"
+                textAnchor="middle"
+                dominantBaseline="middle"
+              >
+                <tspan
+                  x="50%"
+                  dy="-4"
+                  className="fill-slate-900 text-xl font-bold"
+                >
+                  {totalProjects}
+                </tspan>
+                <tspan x="50%" dy="18" className="fill-slate-500 text-xs">
+                  Total Projects
+                </tspan>
+              </text>
+
+              <Tooltip
+                content={<CustomTooltip />}
+                cursor={false}
+                isAnimationActive={false}
+              />
             </PieChart>
           </ResponsiveContainer>
         </div>
+
+        {/* Stats */}
         <div className="space-y-4">
           {projectData.map((p) => (
             <div
@@ -39,7 +98,7 @@ export default function ProjectsOverview() {
                 <div
                   className="w-3 h-3 rounded-full"
                   style={{ backgroundColor: p.color }}
-                ></div>
+                />
                 <span className="font-medium text-slate-700">{p.name}</span>
               </div>
               <span className="font-bold text-slate-900">{p.value}</span>
@@ -51,6 +110,7 @@ export default function ProjectsOverview() {
   );
 }
 
+/* ---------- Section Header ---------- */
 const SectionHeader: React.FC<{
   title: string;
   icon?: any;
