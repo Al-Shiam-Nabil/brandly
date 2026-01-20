@@ -105,21 +105,23 @@ const NotesPage: React.FC = () => {
             Repository of client notes, documentation, and technical drafts.
           </p>
         </div>
-        <button
-          onClick={() => {
-            setEditingNote(null);
-            setIsModalOpen(true);
-          }}
-          className="flex items-center gap-2 bg-primary hover:bg-black text-white px-8 py-3.5 cursor-pointer rounded-lg font-bold transition-all  "
-        >
-          <Plus size={20} />
-          Add Entry
-        </button>
+        <div>
+          <button
+            onClick={() => {
+              setEditingNote(null);
+              setIsModalOpen(true);
+            }}
+            className="flex items-center gap-2 bg-primary hover:bg-black text-white px-8 py-3.5 cursor-pointer rounded-lg font-bold transition-all  "
+          >
+            <Plus size={20} />
+            Add Entry
+          </button>
+        </div>
       </div>
 
       {/* Control Strip */}
       <div className="flex flex-col md:flex-row lg:justify-between items-center gap-4 mb-10">
-        <div className="relative group w-2xl">
+        <div className="relative group w-full lg:w-2xl">
           <Search
             className="absolute left-6 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-indigo-600 transition-colors"
             size={18}

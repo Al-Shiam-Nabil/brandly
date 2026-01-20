@@ -115,7 +115,7 @@ const EventsPage: React.FC = () => {
     <div className="flex flex-col lg:flex-row gap-8 h-full animate-fadeIn">
       {/* Main Calendar Section */}
       <div className="flex-1  overflow-y-auto">
-        <div className="flex items-center justify-between mb-8">
+        <div className="flex items-center justify-between flex-wrap mb-8 gap-5">
           <div className="space-y-2">
             <h1 className="text-3xl font-bold text-slate-900">
               {monthName} {currentDate.getFullYear()}

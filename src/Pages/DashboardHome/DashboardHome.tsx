@@ -35,7 +35,7 @@ export default function DashboardHome() {
 
       <div className=" grid grid-cols-12 gap-8">
         {/* left */}
-        <div className="col-span-7 space-x-8 space-y-8 ">
+        <div className=" col-span-full xl:col-span-7 space-x-8 space-y-8 ">
           <ProjectsOverview />
           <ReminderComponent
             todayCount={5}
@@ -48,7 +48,7 @@ export default function DashboardHome() {
         </div>
 
         {/* right */}
-        <div className="col-span-5 space-y-8 space-x-8">
+        <div className="col-span-full xl:col-span-5 space-y-8 space-x-8">
           <MyTimeSheet />
           <Todo />
         </div>

@@ -15,11 +15,13 @@ import DefaultUser from "../../../assets/defaultUser.webp";
 import useDashboardHook from "../../../Hooks/useDashboardHook";
 
 export default function Header() {
-  const { isOpen, setIsOpen } = useDashboardHook();
+  const { isOpen, setIsOpen, isMobile } = useDashboardHook();
 
   return (
     <div
-      className={`h-16.25 bg-white shadow-sm px-6 flex items-center justify-between fixed top-0 ${isOpen ? "left-62.5" : "left-17"} right-0 z-50`}
+      className={`h-16.25 bg-white shadow-sm px-6 flex items-center justify-between fixed top-0  ${
+        isMobile ? "left-0" : isOpen ? "left-62.5" : "left-17"
+      }  right-0 z-50 `}
     >
       {/* left */}
       <div className="flex items-center gap-7 ">

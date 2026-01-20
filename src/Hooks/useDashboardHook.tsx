@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import { SidebarContext } from "../Context/SidebarContext";
+import { DashboardContext } from "../Context/DashboardContext";
 
 export default function useDashboardHook() {
-  const data = useContext(SidebarContext);
+  const data = useContext(DashboardContext);
 
   if (!data) {
     throw new Error("useSidebar must be used inside SidebarContextProvider");

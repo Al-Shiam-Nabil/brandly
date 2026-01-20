@@ -117,10 +117,13 @@ const ReportsPage: React.FC = () => {
             Analyze team performance, billable hours, and project distribution.
           </p>
         </div>
-        <button className="flex items-center gap-2 bg-slate-900 hover:bg-black text-white px-6 py-3.5 rounded-xl font-bold transition-all ">
-          <Download size={18} />
-          Export Report
-        </button>
+        <div>
+          {" "}
+          <button className="flex items-center gap-2 bg-slate-900 hover:bg-black text-white px-6 py-3.5 rounded-xl font-bold transition-all ">
+            <Download size={18} />
+            Export Report
+          </button>
+        </div>
       </div>
 
       {/* Bento Summary Cards */}
@@ -188,7 +191,7 @@ const ReportsPage: React.FC = () => {
 
       {/* Control Strip */}
       <div className="flex flex-col lg:flex-row lg:justify-between items-center gap-4 mb-8">
-        <div className="relative  group w-2xl">
+        <div className="relative  group flex-1  w-full lg:w-2xl">
           <Search
             className="absolute left-6 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-indigo-600 transition-colors"
             size={18}

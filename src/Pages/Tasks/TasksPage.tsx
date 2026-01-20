@@ -146,15 +146,17 @@ const TasksPage: React.FC = () => {
             Manage enterprise-wide deliverables and team assignments.
           </p>
         </div>
-        <button className="flex items-center gap-2 bg-primary cursor-pointer hover:bg-black text-white px-6 py-3 rounded-xl font-bold transition-all ">
-          <Plus size={20} />
-          Create Task
-        </button>
+        <div>
+          <button className="flex items-center gap-2 bg-primary cursor-pointer hover:bg-black text-white px-6 py-3 rounded-xl font-bold transition-all  ">
+            <Plus size={20} />
+            Create Task
+          </button>
+        </div>
       </div>
 
       {/* Control Strip */}
       <div className="flex flex-col lg:flex-row lg:justify-between items-center gap-4 mb-8">
-        <div className="relative w-2xl group">
+        <div className="relative w-full lg:w-2xl group">
           <Search
             className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-indigo-600 transition-colors"
             size={18}

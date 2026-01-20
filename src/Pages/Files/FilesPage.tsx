@@ -122,10 +122,12 @@ const FilesPage: React.FC = () => {
             Unified repository for project documentation and media assets.
           </p>
         </div>
-        <button className="flex items-center gap-2 bg-slate-900 hover:bg-black text-white px-8 py-4 rounded-xl font-bold transition-all ">
-          <Upload size={20} />
-          Upload Files
-        </button>
+        <div>
+          <button className="flex items-center gap-2 bg-slate-900 hover:bg-black text-white px-8 py-4 rounded-xl font-bold transition-all ">
+            <Upload size={20} />
+            Upload Files
+          </button>
+        </div>
       </div>
 
       {/* Storage Intelligence Bento */}
@@ -182,7 +184,7 @@ const FilesPage: React.FC = () => {
 
       {/* Search & Filter Command Strip */}
       <div className="flex flex-col lg:flex-row lg:justify-between items-center gap-4 mb-10">
-        <div className="relative group w-2xl">
+        <div className="relative group flex-1 w-full lg:w-2xl">
           <Search
             className="absolute left-6 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-indigo-600 transition-colors"
             size={18}
