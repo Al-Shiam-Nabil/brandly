@@ -130,60 +130,60 @@ const ReportsPage: React.FC = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
         <div className="bg-indigo-600 p-8 rounded-xl text-white  flex flex-col justify-between">
           <div className="flex items-center justify-between mb-4">
-            <span className="text-[10px] font-bold uppercase tracking-[0.2em] opacity-60">
+            <span className="text-sm font-bold uppercase">
               Total Hours Logged
             </span>
             <div className="p-2 bg-white/10 rounded-xl">
-              <Clock size={18} />
+              <Clock size={20} />
             </div>
           </div>
           <p className="text-4xl font-black">{totalBillable.toFixed(1)}h</p>
-          <div className="mt-4 flex items-center gap-2 text-xs font-bold text-white/80">
+          <div className="mt-4 flex items-center gap-2 text-sm  ">
             <ArrowUpRight size={14} />
             +12% from last week
           </div>
         </div>
         <div className="bg-white p-8 rounded-xl border border-slate-100  flex flex-col justify-between">
           <div className="flex items-center justify-between mb-4">
-            <span className="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em]">
+            <span className="text-sm font-bold text-slate-700 uppercase ">
               Active Members
             </span>
             <div className="p-2 bg-slate-50 text-indigo-600 rounded-xl">
-              <Users size={18} />
+              <Users size={20} />
             </div>
           </div>
           <p className="text-4xl font-black text-slate-900">14</p>
-          <div className="mt-4 text-xs font-bold text-emerald-600">
+          <div className="mt-4 text-sm text-emerald-600">
             8 currently tracking
           </div>
         </div>
         <div className="bg-white p-8 rounded-xl border border-slate-100  flex flex-col justify-between">
           <div className="flex items-center justify-between mb-4">
-            <span className="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em]">
+            <span className="text-sm font-bold text-slate-700 uppercase ">
               Top Client
             </span>
             <div className="p-2 bg-slate-50 text-indigo-600 rounded-xl">
-              <Briefcase size={18} />
+              <Briefcase size={20} />
             </div>
           </div>
           <p className="text-2xl font-black text-slate-900 truncate">
             Globex Corp
           </p>
-          <div className="mt-4 text-xs font-bold text-slate-500">
+          <div className="mt-4 text-sm  text-slate-500">
             Contributing 35% effort
           </div>
         </div>
         <div className="bg-slate-900 p-8 rounded-xl text-white  flex flex-col justify-between">
           <div className="flex items-center justify-between mb-4">
-            <span className="text-[10px] font-bold uppercase tracking-[0.2em] opacity-50">
+            <span className="text-sm font-bold uppercase text-white">
               Workload Health
             </span>
             <div className="p-2 bg-white/10 rounded-xl">
-              <BarChart3 size={18} />
+              <BarChart3 size={20} />
             </div>
           </div>
           <p className="text-4xl font-black text-white">Optimal</p>
-          <div className="mt-4 w-full bg-white/10 h-1 rounded-full overflow-hidden">
+          <div className="mt-4 w-full bg-white/10 h-2 rounded-full overflow-hidden">
             <div className="bg-indigo-500 h-full w-[88%]"></div>
           </div>
         </div>
@@ -210,7 +210,7 @@ const ReportsPage: React.FC = () => {
             <select
               value={projectFilter}
               onChange={(e) => setProjectFilter(e.target.value)}
-              className="bg-transparent outline-none cursor-pointer appearance-none pr-6"
+              className="bg-transparent text-sm outline-none cursor-pointer appearance-none  pr-6"
             >
               <option value="All">All Projects</option>
               {projects.map((p) => (
@@ -229,19 +229,15 @@ const ReportsPage: React.FC = () => {
         <table className="w-full text-left min-w-[1200px]">
           <thead>
             <tr className="bg-slate-50/50 border-b border-slate-100">
-              <th className="px-10 py-6 text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em]">
-                Member
-              </th>
-              <th className="px-10 py-6 text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em]">
+              <th className="px-10 py-6  font-bold text-slate-700 ">Member</th>
+              <th className="px-10 py-6  font-bold text-slate-700 ">
                 Project & Client
               </th>
-              <th className="px-10 py-6 text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em]">
-                Task
-              </th>
-              <th className="px-10 py-6 text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em]">
+              <th className="px-10 py-6  font-bold text-slate-700 ">Task</th>
+              <th className="px-10 py-6  font-bold text-slate-700 ">
                 Interval
               </th>
-              <th className="px-10 py-6 text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] text-right">
+              <th className="px-10 py-6  font-bold text-slate-700  text-right">
                 Total
               </th>
             </tr>
@@ -254,52 +250,52 @@ const ReportsPage: React.FC = () => {
               >
                 <td className="px-10 py-8">
                   <div className="flex items-center gap-4">
-                    <div className="w-10 h-10 bg-indigo-600 text-white rounded-xl flex items-center justify-center text-xs font-black shadow-md">
+                    <div className="w-10 h-10 bg-indigo-500 text-white rounded-xl flex items-center justify-center text-xs font-black shadow-md">
                       {getInitials(entry.member)}
                     </div>
-                    <span className="text-sm font-bold text-slate-900 group-hover:text-indigo-600 transition-colors">
+                    <span className="text-sm font-bold text-slate-700 group-hover:text-indigo-500 transition-colors">
                       {entry.member}
                     </span>
                   </div>
                 </td>
                 <td className="px-10 py-8">
                   <div className="flex flex-col">
-                    <span className="text-sm font-bold text-slate-900 tracking-tight">
+                    <span className="text-sm font-bold text-slate-700 tracking-tight">
                       {entry.project}
                     </span>
-                    <span className="text-[10px] font-black text-slate-400 uppercase opacity-60">
+                    <span className="text-[12px] font-bold  text-slate-400 uppercase mt-1">
                       {entry.client}
                     </span>
                   </div>
                 </td>
                 <td className="px-10 py-8 max-w-xs">
-                  <span className="text-sm font-medium text-slate-600 italic">
-                    "{entry.task}"
+                  <span className="text-sm font-medium text-slate-600 ">
+                    {entry.task}
                   </span>
                 </td>
                 <td className="px-10 py-8">
                   <div className="flex items-center gap-3">
                     <div className="flex flex-col">
-                      <span className="text-[10px] font-bold text-slate-400 uppercase">
+                      <span className="text-[12px] font-bold text-slate-400 uppercase">
                         From
                       </span>
-                      <span className="text-xs font-bold text-slate-700">
+                      <span className="text-xs font-bold text-slate-700 mt-1">
                         {entry.startTime}
                       </span>
                     </div>
                     <ArrowRight size={14} className="text-slate-300" />
                     <div className="flex flex-col">
-                      <span className="text-[10px] font-bold text-slate-400 uppercase">
+                      <span className="text-[12px] font-bold text-slate-400 uppercase">
                         To
                       </span>
-                      <span className="text-xs font-bold text-slate-700">
+                      <span className="text-xs font-bold text-slate-700 mt-1">
                         {entry.endTime}
                       </span>
                     </div>
                   </div>
                 </td>
                 <td className="px-10 py-8 text-right">
-                  <div className="inline-flex items-center gap-2 bg-indigo-50 text-indigo-600 px-4 py-2 rounded-xl font-black text-sm border border-indigo-100">
+                  <div className="inline-flex items-center gap-2 bg-indigo-50 text-indigo-600 px-4 py-2 rounded-xl font-bold text-sm border border-indigo-100">
                     <Timer size={14} />
                     {entry.totalHours.toFixed(1)}h
                   </div>

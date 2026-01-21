@@ -5,12 +5,10 @@ import {
   Edit2,
   Filter,
   Mail,
-  MailQuestion,
   Plus,
   Search,
   Trash2,
   Users2,
-  XCircle,
 } from "lucide-react";
 import React, { useMemo, useState } from "react";
 import { MemberStatus, type CRMTeamMember } from "../../types";
@@ -151,11 +149,11 @@ const TeamMembers: React.FC = () => {
             <div className="w-12 h-12 bg-indigo-50 text-indigo-600   rounded-xl  flex items-center justify-center">
               <Users2 size={24} />
             </div>
-            <div>
-              <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">
+            <div className="space-y-2">
+              <p className="text-sm font-bold text-slate-700 uppercase ">
                 Total Members
               </p>
-              <p className="text-2xl font-black text-slate-900">
+              <p className="text-2xl font-black text-slate-700">
                 {team.length}
               </p>
             </div>
@@ -172,11 +170,11 @@ const TeamMembers: React.FC = () => {
             <div className="w-12 h-12 bg-emerald-50 text-emerald-600   rounded-xl  flex items-center justify-center">
               <CheckCircle2 size={24} />
             </div>
-            <div>
-              <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">
+            <div className="space-y-2">
+              <p className="text-sm font-bold text-slate-700 uppercase ">
                 Active Pulse
               </p>
-              <p className="text-2xl font-black text-slate-900">
+              <p className="text-2xl font-black text-slate-700">
                 {activeCount}
               </p>
             </div>
@@ -194,8 +192,8 @@ const TeamMembers: React.FC = () => {
             <div className="w-12 h-12 bg-white/10 text-white   rounded-xl  flex items-center justify-center">
               <Briefcase size={24} />
             </div>
-            <div>
-              <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest opacity-60">
+            <div className="space-y-2">
+              <p className="text-sm font-bold text-white uppercase ">
                 Departments
               </p>
               <p className="text-2xl font-black">{departments.length}</p>
@@ -205,7 +203,7 @@ const TeamMembers: React.FC = () => {
             {[...Array(3)].map((_, i) => (
               <div
                 key={i}
-                className="w-6 h-6 rounded-full bg-slate-700 border-2 border-slate-900 flex items-center justify-center text-[8px] font-black"
+                className="w-8 h-8 rounded-full bg-slate-600 border-2 border-slate-900 flex items-center justify-center text-[10px] font-bold"
               >
                 {i + 1}
               </div>
@@ -236,10 +234,10 @@ const TeamMembers: React.FC = () => {
                 <button
                   key={status}
                   onClick={() => setStatusFilter(status)}
-                  className={`px-4 py-3 rounded-lg text-[11px] font-black cursor-pointer uppercase tracking-wider transition-all ${
+                  className={`px-4 py-3 rounded-lg text-[12px] font-bold cursor-pointer uppercase  transition-all ${
                     statusFilter === status
                       ? "bg-primary text-white "
-                      : "text-slate-500 hover:text-slate-900"
+                      : "text-slate-700 hover:text-slate-900"
                   }`}
                 >
                   {status}
@@ -247,12 +245,12 @@ const TeamMembers: React.FC = () => {
               ),
             )}
           </div>
-          <div className="flex items-center gap-2 bg-white border border-slate-100 rounded-xl px-4 py-5 text-[12px] font-black text-slate-600   hover:bg-slate-50 transition-all cursor-pointer">
+          <div className="flex items-center gap-2 bg-white border border-slate-100 rounded-xl px-4 py-5 text-sm font-bold text-slate-600   hover:bg-slate-50 transition-all cursor-pointer">
             <Filter size={16} className="text-slate-400" />
             <select
               value={deptFilter}
               onChange={(e) => setDeptFilter(e.target.value)}
-              className="bg-transparent outline-none cursor-pointer appearance-none pr-4 px-5"
+              className="bg-transparent  outline-none cursor-pointer appearance-none pr-4 px-5"
             >
               <option value="All">All Departments</option>
               {departments.map((d) => (
@@ -261,13 +259,13 @@ const TeamMembers: React.FC = () => {
                 </option>
               ))}
             </select>
-            <ChevronDown size={14} className="text-slate-400" />
+            <ChevronDown size={16} className="text-slate-400" />
           </div>
         </div>
       </div>
 
       {/* High-Resolution Data Table */}
-      <div className="bg-white   rounded-xl  border border-slate-100   overflow-hidden overflow-x-auto">
+      {/* <div className="bg-white   rounded-xl  border border-slate-100   overflow-hidden overflow-x-auto">
         <table className="w-full text-left min-w-[1100px]">
           <thead>
             <tr className="bg-slate-50/50 border-b border-slate-100">
@@ -393,6 +391,67 @@ const TeamMembers: React.FC = () => {
             </p>
           </div>
         )}
+      </div> */}
+
+      {/* member card */}
+      <div className="grid grid-cols-4 gap-8 ">
+        {filteredTeam.map((member) => (
+          <div key={member.id} className="group rounded-xl">
+            <div className="w-full h-60 relative rounded-t-xl overflow-hidden">
+              <img
+                src={member.image}
+                alt={member.name}
+                className="w-full h-full rounded-t-xl object-cover group-hover:scale-105 transition-all duration-300 ease-in-out"
+              />
+
+              <div
+                className={`absolute top-3 right-3 rounded-lg ${member.status === MemberStatus.ACTIVE ? "bg-green-500" : "bg-red-500"}  px-4 py-1 text-sm font-semibold text-white`}
+              >
+                {member.status}
+              </div>
+            </div>
+
+            <div className="bg-white px-4 py-3  space-y-2 rounded-b-xl">
+              <h3 className="font-semibold text-lg ">{member.name}</h3>
+
+              <div className="flex justify-between items-center">
+                <p className="font-medium ">{member.jobTitle}</p>
+                <p className="text-sm bg-blue-100 text-blue-600 font-medium py-1 px-4 rounded-lg">
+                  {member.department}
+                </p>
+              </div>
+
+              <p className="text-sm">Joined At {member.joinedDate}</p>
+
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-sm text-gray-500">{member.email}</p>
+                </div>
+                <div className="flex items-center justify-end gap-1">
+                  <button
+                    className="p-2.5 text-slate-400 hover:text-indigo-600 hover:bg-white rounded-xl   transition-all border border-transparent hover:border-slate-100 cursor-pointer"
+                    title="Email"
+                  >
+                    <Mail size={16} />
+                  </button>
+                  <button
+                    className="p-2.5 text-slate-400 hover:text-indigo-600 hover:bg-white rounded-xl   transition-all border border-transparent hover:border-slate-100 cursor-pointer"
+                    title="Edit"
+                  >
+                    <Edit2 size={16} />
+                  </button>
+                  <button
+                    onClick={() => handleDelete(member.id)}
+                    className="p-2.5 text-slate-400 hover:text-rose-600 hover:bg-white rounded-xl   transition-all border border-transparent hover:border-slate-100 cursor-pointer"
+                    title="Delete"
+                  >
+                    <Trash2 size={16} />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );

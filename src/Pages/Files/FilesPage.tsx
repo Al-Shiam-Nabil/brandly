@@ -124,7 +124,7 @@ const FilesPage: React.FC = () => {
         </div>
         <div>
           <button className="flex items-center gap-2 bg-slate-900 hover:bg-black text-white px-8 py-4 rounded-xl font-bold transition-all ">
-            <Upload size={20} />
+            <Upload size={18} />
             Upload Files
           </button>
         </div>
@@ -135,16 +135,16 @@ const FilesPage: React.FC = () => {
         <div className="lg:col-span-2 bg-white p-8 rounded-xl border border-slate-100  flex flex-col justify-between group overflow-hidden relative">
           <div className="relative z-10">
             <div className="flex items-center justify-between mb-6">
-              <span className="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em]">
+              <span className="text-base font-bold text-slate-700 uppercase ">
                 Storage Capacity
               </span>
-              <HardDrive size={18} className="text-indigo-600" />
+              <HardDrive size={24} className="text-indigo-600" />
             </div>
             <div className="flex items-end gap-3 mb-4">
-              <p className="text-5xl font-black text-slate-900 tracking-tighter">
-                4.2 <span className="text-2xl text-slate-400">GB</span>
+              <p className="text-5xl font-bold text-slate-900 tracking-tighter">
+                4.2 <span className="text-2xl text-slate-700">GB</span>
               </p>
-              <p className="text-sm font-bold text-slate-400 mb-2">
+              <p className="text-sm font-bold text-slate-700 mb-2">
                 of 20 GB used
               </p>
             </div>
@@ -161,18 +161,16 @@ const FilesPage: React.FC = () => {
         </div>
         <div className="bg-slate-900 p-8 rounded-xl text-white  flex flex-col justify-between">
           <div className="flex items-center justify-between">
-            <span className="text-[10px] font-bold uppercase tracking-[0.2em] opacity-50">
-              Quick Summary
-            </span>
-            <Archive size={18} className="opacity-50" />
+            <span className="text-sm font-bold uppercase ">Quick Summary</span>
+            <Archive size={20} className="" />
           </div>
           <div>
             <p className="text-3xl font-black">{MOCK_FILES.length} Files</p>
-            <p className="text-xs font-bold text-slate-400 mt-1 uppercase tracking-wider">
+            <p className="text-xs font-bold text-slate-300 mt-2 uppercase tracking-wider">
               Across 4 Departments
             </p>
           </div>
-          <div className="flex items-center gap-2 text-indigo-400 font-bold text-xs mt-4 group cursor-pointer">
+          <div className="flex items-center gap-2 text-indigo-200 font-bold text-xs mt-4 group cursor-pointer">
             Review Policies
             <ArrowRight
               size={14}
@@ -219,22 +217,16 @@ const FilesPage: React.FC = () => {
         <table className="w-full text-left min-w-[1200px]">
           <thead>
             <tr className="bg-slate-50/50 border-b border-slate-100">
-              <th className="px-10 py-6 text-[12px] font-bold text-slate-400 uppercase tracking-[0.2em]">
-                Name
-              </th>
-              <th className="px-10 py-6 text-[12px] font-bold text-slate-400 uppercase tracking-[0.2em]">
-                Type
-              </th>
-              <th className="px-10 py-6 text-[12px] font-bold text-slate-400 uppercase tracking-[0.2em]">
-                Size
-              </th>
-              <th className="px-10 py-6 text-[12px] font-bold text-slate-400 uppercase tracking-[0.2em]">
+              <th className="px-10 py-6  font-bold text-slate-700 ">Name</th>
+              <th className="px-10 py-6  font-bold text-slate-700 ">Type</th>
+              <th className="px-10 py-6  font-bold text-slate-700 ">Size</th>
+              <th className="px-10 py-6  font-bold text-slate-700 ">
                 Uploaded
               </th>
-              <th className="px-10 py-6 text-[12px] font-bold text-slate-400 uppercase tracking-[0.2em]">
+              <th className="px-10 py-6  font-bold text-slate-700 ">
                 Shared With
               </th>
-              <th className="px-10 py-6 text-[12px] font-bold text-slate-400 uppercase tracking-[0.2em] w-20"></th>
+              <th className="px-10 py-6  font-bold text-slate-700  w-20"></th>
             </tr>
           </thead>
           <tbody className="divide-y divide-slate-50">
@@ -249,10 +241,10 @@ const FilesPage: React.FC = () => {
                       {getFileIcon(file.type)}
                     </div>
                     <div className="flex flex-col">
-                      <span className="text-base font-bold text-slate-900 group-hover:text-indigo-600 transition-colors cursor-pointer tracking-tight">
+                      <span className="text-base font-semibold text-slate-700 group-hover:text-indigo-500 transition-colors cursor-pointer tracking-tight">
                         {file.name}
                       </span>
-                      <span className="text-[10px] font-bold text-slate-400 uppercase opacity-60">
+                      <span className="text-sm font-medium text-slate-500 mt-1 ">
                         Uploaded by {file.owner}
                       </span>
                     </div>
@@ -264,7 +256,7 @@ const FilesPage: React.FC = () => {
                   </span>
                 </td>
                 <td className="px-10 py-8">
-                  <span className="text-xs font-bold text-slate-400 bg-slate-50 px-2.5 py-1 rounded-lg border border-slate-100">
+                  <span className="text-xs font-bold text-slate-500 bg-slate-50 px-2.5 py-1 rounded-lg border border-slate-100">
                     {file.size}
                   </span>
                 </td>

@@ -164,8 +164,8 @@ const LeavePage: React.FC = () => {
             <div className="w-12 h-12 bg-indigo-50 text-indigo-600  rounded-xl flex items-center justify-center transition-transform group-hover:scale-110">
               <CalendarIcon size={24} />
             </div>
-            <div>
-              <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">
+            <div className="space-y-2">
+              <p className="text-sm font-bold text-slate-500 uppercase ">
                 Total Monthly
               </p>
               <p className="text-2xl font-black text-slate-900">
@@ -174,7 +174,7 @@ const LeavePage: React.FC = () => {
             </div>
           </div>
           <div className="h-full flex items-end">
-            <span className="text-[10px] font-bold text-indigo-600 bg-indigo-50 px-2 py-1 rounded-lg">
+            <span className="text-[12px] font-medium text-indigo-600 bg-indigo-50 px-2 py-1 rounded-lg">
               All Types
             </span>
           </div>
@@ -185,8 +185,8 @@ const LeavePage: React.FC = () => {
             <div className="w-12 h-12 bg-amber-50 text-amber-600  rounded-xl flex items-center justify-center transition-transform group-hover:scale-110">
               <Clock size={24} />
             </div>
-            <div>
-              <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">
+            <div className="space-y-2">
+              <p className="text-sm font-bold text-slate-500 uppercase ">
                 Awaiting Decision
               </p>
               <p className="text-2xl font-black text-slate-900">
@@ -204,8 +204,8 @@ const LeavePage: React.FC = () => {
             <div className="w-12 h-12 bg-white/10 text-white  rounded-xl flex items-center justify-center">
               <CheckCircle2 size={24} />
             </div>
-            <div>
-              <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest opacity-60">
+            <div className="space-y-2">
+              <p className="text-sm font-bold text-slate-300 uppercase ">
                 Success Rate
               </p>
               <p className="text-2xl font-black text-white">
@@ -214,7 +214,7 @@ const LeavePage: React.FC = () => {
             </div>
           </div>
           <div className="text-right">
-            <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">
+            <span className="text-[12px] font-bold text-slate-300  ">
               Approved
             </span>
           </div>
@@ -243,7 +243,7 @@ const LeavePage: React.FC = () => {
                 <button
                   key={status}
                   onClick={() => setStatusFilter(status)}
-                  className={`px-4 py-2 rounded-lg text-[12px] font-black uppercase tracking-wider transition-all cursor-pointer ${
+                  className={`px-4 py-2 rounded-lg text-[12px] font-bold uppercase  transition-all cursor-pointer ${
                     statusFilter === status
                       ? "bg-slate-900 text-white -lg"
                       : "text-slate-500 hover:text-slate-900"
@@ -254,12 +254,12 @@ const LeavePage: React.FC = () => {
               ),
             )}
           </div>
-          <div className="flex  items-center gap-2 bg-white border border-slate-100 rounded-xl px-4 py-4 text-[12px] font-black text-slate-600 -sm hover:bg-slate-50 transition-all cursor-pointer">
+          <div className="flex  items-center gap-2 bg-white border border-slate-100 rounded-xl px-4 py-4 text-[12px] font-bold  text-slate-500 -sm hover:bg-slate-50 transition-all cursor-pointer">
             <Filter size={16} className="text-slate-400" />
             <select
               value={typeFilter}
               onChange={(e) => setTypeFilter(e.target.value as any)}
-              className="bg-transparent outline-none cursor-pointer appearance-none pr-4"
+              className="bg-transparent outline-none cursor-pointer appearance-none pr-4 uppercase"
             >
               <option value="All">All Types</option>
               {Object.values(LeaveType).map((t) => (
@@ -278,22 +278,16 @@ const LeavePage: React.FC = () => {
         <table className="w-full text-left min-w-[1000px]">
           <thead>
             <tr className="bg-slate-50/50 border-b border-slate-100">
-              <th className="px-8 py-5 text-[12px] font-black text-slate-400 uppercase">
+              <th className="px-8 py-5  font-bold text-slate-700 ">
                 Team Member
               </th>
-              <th className="px-8 py-5 text-[12px] font-black text-slate-400 uppercase">
+              <th className="px-8 py-5  font-bold text-slate-700 ">
                 Leave Type
               </th>
-              <th className="px-8 py-5 text-[12px] font-black text-slate-400 uppercase">
-                Date
-              </th>
-              <th className="px-8 py-5 text-[12px] font-black text-slate-400 uppercase">
-                Duration
-              </th>
-              <th className="px-8 py-5 text-[12px] font-black text-slate-400 uppercase">
-                Status
-              </th>
-              <th className="px-8 py-5 text-[12px] font-black text-slate-400 uppercase w-20"></th>
+              <th className="px-8 py-5  font-bold text-slate-700 ">Date</th>
+              <th className="px-8 py-5  font-bold text-slate-700 ">Duration</th>
+              <th className="px-8 py-5  font-bold text-slate-700 ">Status</th>
+              <th className="px-8 py-5  font-bold text-slate-700  w-20"></th>
             </tr>
           </thead>
           <tbody className="divide-y divide-slate-50">
@@ -305,7 +299,7 @@ const LeavePage: React.FC = () => {
               >
                 <td className="px-8 py-6">
                   <div className="flex items-center gap-4">
-                    <div className="w-10 h-10 bg-indigo-600 text-white  rounded-xl flex items-center justify-center text-[10px] font-black -md">
+                    <div className="w-10 h-10 bg-indigo-500 text-white  rounded-xl flex items-center justify-center text-[10px] font-black -md">
                       {leave.memberName
                         .split(" ")
                         .map((n) => n[0])
@@ -313,10 +307,10 @@ const LeavePage: React.FC = () => {
                         .toUpperCase()}
                     </div>
                     <div className="flex flex-col">
-                      <span className="text-sm font-bold text-slate-900 group-hover:text-indigo-600 transition-colors">
+                      <span className="text-sm font-bold text-slate-700 group-hover:text-indigo-500 transition-colors">
                         {leave.memberName}
                       </span>
-                      <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest opacity-60">
+                      <span className="text-[12px] font-semibold text-slate-500 mt-2 uppercase  ">
                         Applied: {leave.appliedDate}
                       </span>
                     </div>
@@ -334,7 +328,7 @@ const LeavePage: React.FC = () => {
                 </td>
                 <td className="px-8 py-6">
                   <div className="flex flex-col">
-                    <span className="text-xs font-bold text-slate-900">
+                    <span className="text-sm text-slate-700">
                       {new Date(leave.startDate).toLocaleDateString("en-US", {
                         month: "short",
                         day: "numeric",
@@ -349,13 +343,13 @@ const LeavePage: React.FC = () => {
                   </div>
                 </td>
                 <td className="px-8 py-6">
-                  <span className="text-xs font-black text-slate-400 bg-slate-100 px-3 py-1 rounded-lg border border-slate-100">
+                  <span className="text-xs font-bold text-slate-500 bg-slate-100 px-3 py-1 rounded-lg border border-slate-100">
                     {leave.duration} {leave.duration > 1 ? "Days" : "Day"}
                   </span>
                 </td>
                 <td className="px-8 py-6">
                   <div
-                    className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest border ${getStatusStyle(leave.status)}`}
+                    className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[12px] font-bold  border ${getStatusStyle(leave.status)}`}
                   >
                     {leave.status === LeaveStatus.APPROVED ? (
                       <CheckCircle2 size={12} />

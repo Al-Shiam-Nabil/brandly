@@ -194,34 +194,34 @@ const TasksPage: React.FC = () => {
         <table className="w-full text-left min-w-[1400px]">
           <thead>
             <tr className="bg-slate-50/50 border-b border-slate-100">
-              <th className="px-6 py-5 text-[12px] font-semibold whitespace-nowrap text-slate-400 uppercase tracking-[0.2em] w-24">
+              <th className="px-6 py-5  font-bold whitespace-nowrap text-slate-700 ">
                 ID
               </th>
-              <th className="px-6 py-5 text-[12px] font-semibold whitespace-nowrap text-slate-400 uppercase tracking-[0.2em]">
+              <th className="px-6 py-5  font-bold whitespace-nowrap text-slate-700 ">
                 Title
               </th>
-              <th className="px-6 py-5 text-[12px] font-semibold whitespace-nowrap text-slate-400 uppercase tracking-[0.2em]">
+              <th className="px-6 py-5  font-bold whitespace-nowrap text-slate-700 ">
                 Start Date
               </th>
-              <th className="px-6 py-5 text-[12px] font-semibold whitespace-nowrap text-slate-400 uppercase tracking-[0.2em]">
+              <th className="px-6 py-5  font-bold whitespace-nowrap text-slate-700 ">
                 Deadline
               </th>
-              <th className="px-6 py-5 text-[12px] font-semibold whitespace-nowrap text-slate-400 uppercase tracking-[0.2em]">
+              <th className="px-6 py-5  font-bold whitespace-nowrap text-slate-700 ">
                 Milestone
               </th>
-              <th className="px-6 py-5 text-[12px] font-semibold whitespace-nowrap text-slate-400 uppercase tracking-[0.2em]">
+              <th className="px-6 py-5  font-bold whitespace-nowrap text-slate-700 ">
                 Related To
               </th>
-              <th className="px-6 py-5 text-[12px] font-semibold whitespace-nowrap text-slate-400 uppercase tracking-[0.2em]">
+              <th className="px-6 py-5  font-bold whitespace-nowrap text-slate-700 ">
                 Assigned To
               </th>
-              <th className="px-6 py-5 text-[12px] font-semibold whitespace-nowrap text-slate-400 uppercase tracking-[0.2em]">
+              <th className="px-6 py-5  font-bold whitespace-nowrap text-slate-700 ">
                 Collaborators
               </th>
-              <th className="px-6 py-5 text-[12px] font-semibold whitespace-nowrap text-slate-400 uppercase tracking-[0.2em]">
+              <th className="px-6 py-5  font-bold whitespace-nowrap text-slate-700 ">
                 Status
               </th>
-              <th className="px-6 py-5 text-[12px] font-semibold whitespace-nowrap text-slate-400 uppercase tracking-[0.2em]"></th>
+              <th className="px-6 py-5  font-bold whitespace-nowrap text-slate-700 "></th>
             </tr>
           </thead>
           <tbody className="divide-y divide-slate-50">
@@ -233,12 +233,12 @@ const TasksPage: React.FC = () => {
                   className="group hover:bg-slate-50/50 transition-colors"
                 >
                   <td className="px-6 py-6">
-                    <span className="text-[11px] font-bold text-indigo-600 bg-indigo-50 px-2 py-1 rounded-md">
+                    <span className="text-[12px] font-bold text-indigo-500 bg-indigo-50 px-2 py-1 rounded-md">
                       {task.id}
                     </span>
                   </td>
                   <td className="px-6 py-6 max-w-xs">
-                    <span className="text-sm font-bold text-slate-900 group-hover:text-indigo-600 transition-colors cursor-pointer leading-tight">
+                    <span className="text-sm font-bold text-slate-700 group-hover:text-indigo-600 transition-colors cursor-pointer leading-tight">
                       {task.title}
                     </span>
                   </td>
@@ -294,7 +294,7 @@ const TasksPage: React.FC = () => {
                   </td>
                   <td className="px-6 py-6">
                     <div
-                      className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest ${status.bg} ${status.color}`}
+                      className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[12px] font-bold  ${status.bg} ${status.color}`}
                     >
                       {status.icon}
                       {status.label}

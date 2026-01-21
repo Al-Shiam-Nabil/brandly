@@ -120,36 +120,40 @@ const ProjectsPage: React.FC = () => {
             <div className="p-2 bg-indigo-50 text-indigo-600 rounded-lg">
               <Clock size={18} />
             </div>
-            <span className="text-sm font-bold text-slate-400 uppercase tracking-wider">
+            <span className="text-sm font-bold text-slate-600 uppercase ">
               Active
             </span>
           </div>
           <p className="text-3xl font-black text-slate-900">12</p>
-          <p className="text-xs text-slate-500 mt-2">+2 since last month</p>
+          <p className="text-sm font-medium text-slate-500 mt-2">
+            +2 since last month
+          </p>
         </div>
         <div className="bg-white p-6 rounded-xl border border-slate-100 shadow-sm">
           <div className="flex items-center gap-3 mb-4">
             <div className="p-2 bg-emerald-50 text-emerald-600 rounded-lg">
               <CheckCircle2 size={18} />
             </div>
-            <span className="text-sm font-bold text-slate-400 uppercase tracking-wider">
+            <span className="text-sm font-bold text-slate-600 uppercase ">
               Completed
             </span>
           </div>
           <p className="text-3xl font-black text-slate-900">48</p>
-          <p className="text-xs text-slate-500 mt-2">Overall project success</p>
+          <p className="text-sm font-medium text-slate-500 mt-2">
+            Overall project success
+          </p>
         </div>
         <div className="bg-white p-6 rounded-xl border border-slate-100 shadow-sm">
           <div className="flex items-center gap-3 mb-4">
             <div className="p-2 bg-amber-50 text-amber-600 rounded-lg">
               <AlertCircle size={18} />
             </div>
-            <span className="text-sm font-bold text-slate-400 uppercase tracking-wider">
+            <span className="text-sm font-bold text-slate-600 uppercase ">
               On Hold
             </span>
           </div>
           <p className="text-3xl font-black text-slate-900">3</p>
-          <p className="text-xs text-slate-500 mt-2">
+          <p className="text-sm font-medium text-slate-500 mt-2">
             Awaiting client feedback
           </p>
         </div>
@@ -158,12 +162,14 @@ const ProjectsPage: React.FC = () => {
             <div className="p-2 bg-blue-50 text-blue-600 rounded-lg">
               <Calendar size={18} />
             </div>
-            <span className="text-sm font-bold text-slate-400 uppercase tracking-wider">
+            <span className="text-sm font-bold text-slate-600 uppercase ">
               Pipeline
             </span>
           </div>
           <p className="text-3xl font-black text-slate-900">$2.4M</p>
-          <p className="text-xs text-slate-500 mt-2">Projected revenue</p>
+          <p className="text-sm font-medium text-slate-500 mt-2">
+            Projected revenue
+          </p>
         </div>
       </div>
 
@@ -188,7 +194,7 @@ const ProjectsPage: React.FC = () => {
             <select
               value={statusFilter}
               onChange={(e) => setStatusFilter(e.target.value as any)}
-              className="bg-transparent outline-none text-sm font-bold text-slate-600 cursor-pointer"
+              className="bg-transparent outline-none text-sm font-bold text-slate-700 cursor-pointer"
             >
               <option value="All">All Statuses</option>
               {Object.values(ProjectStatus).map((s) => (
@@ -207,22 +213,22 @@ const ProjectsPage: React.FC = () => {
           <table className="w-full text-left">
             <thead className="bg-slate-50/50 border-b border-slate-100">
               <tr>
-                <th className="px-8 py-5 text-[12px] font-semibold text-slate-500 uppercase tracking-widest">
+                <th className="px-6 py-4  font-bold text-slate-700    ">
                   ID & Title
                 </th>
-                <th className="px-8 py-5 text-[12px] font-semibold text-slate-500 uppercase tracking-widest">
+                <th className="px-6 py-4  font-bold text-slate-700   ">
                   Client
                 </th>
-                <th className="px-8 py-5 text-[12px] font-semibold text-slate-500 uppercase tracking-widest">
+                <th className="px-6 py-4  font-bold text-slate-700   ">
                   Timeline
                 </th>
-                <th className="px-8 py-5 text-[12px] font-semibold text-slate-500 uppercase tracking-widest">
+                <th className="px-6 py-4  font-bold text-slate-700   ">
                   Progress
                 </th>
-                <th className="px-8 py-5 text-[12px] font-semibold text-slate-500 uppercase tracking-widest">
+                <th className="px-6 py-4  font-bold text-slate-700   ">
                   Status
                 </th>
-                <th className="px-8 py-5 text-[12px] font-semibold text-slate-500 uppercase tracking-widest text-right"></th>
+                <th className="px-6 py-4  font-bold text-slate-700   "></th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-50">
@@ -233,10 +239,10 @@ const ProjectsPage: React.FC = () => {
                 >
                   <td className="px-8 py-6">
                     <div className="flex flex-col">
-                      <span className="text-[11px] font-black text-indigo-600 uppercase mb-1">
+                      <span className="text-[12px] font-bold text-indigo-500 uppercase mb-1">
                         {project.id}
                       </span>
-                      <span className="text-base font-bold text-slate-900 tracking-tight group-hover:text-indigo-600 transition-colors">
+                      <span className="text-sm font-bold text-slate-700  group-hover:text-indigo-600 transition-colors">
                         {project.title}
                       </span>
                     </div>
@@ -254,10 +260,10 @@ const ProjectsPage: React.FC = () => {
                   <td className="px-8 py-6">
                     <div className="flex flex-col gap-1">
                       <div className="flex items-center gap-2 text-xs text-slate-500">
-                        <span className="w-12 font-bold uppercase tracking-tighter opacity-50">
+                        <span className="w-12 font-bold uppercase  ">
                           Start
                         </span>
-                        <span className="font-medium">
+                        <span className="font-medium text-sm">
                           {new Date(project.startDate).toLocaleDateString(
                             "en-US",
                             { month: "short", day: "numeric", year: "numeric" },
@@ -265,10 +271,8 @@ const ProjectsPage: React.FC = () => {
                         </span>
                       </div>
                       <div className="flex items-center gap-2 text-xs text-slate-500">
-                        <span className="w-12 font-bold uppercase tracking-tighter opacity-50">
-                          End
-                        </span>
-                        <span className="font-medium">
+                        <span className="w-12 font-bold uppercase  ">End</span>
+                        <span className="font-medium text-sm">
                           {new Date(project.deadline).toLocaleDateString(
                             "en-US",
                             { month: "short", day: "numeric", year: "numeric" },
@@ -280,7 +284,7 @@ const ProjectsPage: React.FC = () => {
                   <td className="px-8 py-6">
                     <div className="w-40">
                       <div className="flex items-center justify-between mb-2">
-                        <span className="text-[11px] font-black text-slate-400 uppercase tracking-wider">
+                        <span className="text-sm font-semibold text-slate-600 uppercase tracking-wider">
                           {project.progress}%
                         </span>
                       </div>
@@ -298,7 +302,7 @@ const ProjectsPage: React.FC = () => {
                   </td>
                   <td className="px-8 py-6">
                     <span
-                      className={`px-3 py-1.5 rounded-xl text-[10px] font-black uppercase tracking-widest border ${getStatusStyle(project.status)}`}
+                      className={`px-3 py-1.5 rounded-xl text-[12px] font-bold   border ${getStatusStyle(project.status)}`}
                     >
                       {project.status}
                     </span>

@@ -134,7 +134,7 @@ const NotesPage: React.FC = () => {
             className="w-full pl-16 pr-6 py-4.5 bg-white border border-slate-100 rounded-xl outline-none focus:ring-4 focus:ring-indigo-50/50 focus:border-indigo-200 transition-all font-medium text-slate-700   "
           />
         </div>
-        <button className="flex items-center gap-2 bg-white border border-slate-100 rounded-xl px-6 py-4.5 text-xs font-bold text-slate-500 hover:bg-slate-50 transition-all   ">
+        <button className="flex items-center gap-2 bg-white border border-slate-100 rounded-xl px-6 py-4.5 text-sm font-bold text-slate-600 hover:bg-slate-50 transition-all   ">
           Latest First
           <ChevronDown size={14} />
         </button>
@@ -145,16 +145,14 @@ const NotesPage: React.FC = () => {
         <table className="w-full text-left min-w-[900px]">
           <thead>
             <tr className="bg-slate-50/50 border-b border-slate-100">
-              <th className="px-10 py-6 text-[12px] font-bold text-slate-400 uppercase  w-72">
+              <th className="px-10 py-6  font-bold text-slate-700   w-72">
                 Created Date
               </th>
-              <th className="px-10 py-6 text-[12px] font-bold text-slate-400 uppercase ">
-                Title
-              </th>
-              <th className="px-10 py-6 text-[12px] font-bold text-slate-400 uppercase  w-80">
+              <th className="px-10 py-6 font-bold text-slate-700 ">Title</th>
+              <th className="px-10 py-6 font-bold text-slate-700  w-80">
                 Files
               </th>
-              <th className="px-10 py-6 text-[12px] font-bold text-slate-400 uppercase  w-20"></th>
+              <th className="px-10 py-6  font-bold text-slate-700  w-20"></th>
             </tr>
           </thead>
           <tbody className="divide-y divide-slate-50">
@@ -169,10 +167,10 @@ const NotesPage: React.FC = () => {
                       <Calendar size={20} />
                     </div>
                     <div className="flex flex-col">
-                      <span className="text-sm font-bold text-slate-900 tracking-tight">
+                      <span className="text-sm font-bold text-slate-700 ">
                         {formatDate(note.createdAt)}
                       </span>
-                      <span className="text-[10px] font-bold text-slate-400 uppercase opacity-60">
+                      <span className="text-[12px] font-semibold text-slate-500 uppercase mt-1 ">
                         {getRelativeTime(note.createdAt)}
                       </span>
                     </div>
@@ -185,7 +183,7 @@ const NotesPage: React.FC = () => {
                         setEditingNote(note);
                         setIsModalOpen(true);
                       }}
-                      className="text-base font-bold text-slate-900 group-hover:text-indigo-600 transition-colors cursor-pointer leading-snug flex items-center gap-2"
+                      className="text-base font-bold text-slate-700 group-hover:text-indigo-600 transition-colors cursor-pointer leading-snug flex items-center gap-2"
                     >
                       {note.title}
                       <ArrowRight
@@ -193,25 +191,25 @@ const NotesPage: React.FC = () => {
                         className="opacity-0 group-hover:opacity-100 transition-all -translate-x-2 group-hover:translate-x-0"
                       />
                     </span>
-                    <span className="text-sm text-slate-400 font-medium line-clamp-1 mt-1.5 opacity-80">
+                    <span className="text-sm text-slate-600 font-medium line-clamp-1 mt-1.5 opacity-80">
                       {note.content}
                     </span>
                   </div>
                 </td>
                 <td className="px-10 py-8">
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-3">
                     {note.files.length > 0 ? (
                       note.files.map((file, idx) => (
                         <div
                           key={idx}
-                          className="flex items-center gap-2 bg-white border border-slate-100 px-3 py-1.5 rounded-xl text-[10px] font-bold text-slate-600    hover:shadow-md transition-all cursor-pointer"
+                          className="flex items-center gap-2 bg-white border border-slate-200 px-3 py-2 rounded-xl text-sm font-semibold text-slate-600    hover:shadow-md transition-all cursor-pointer"
                         >
-                          <FileText size={12} className="text-indigo-500" />
+                          <FileText size={18} className="text-indigo-500" />
                           {file}
                         </div>
                       ))
                     ) : (
-                      <span className="text-[10px] font-bold text-slate-300 uppercase tracking-widest italic">
+                      <span className="text-sm font-semibold text-slate-500  ">
                         Encrypted Repository
                       </span>
                     )}

@@ -161,17 +161,17 @@ const EventsPage: React.FC = () => {
 
         {/* Calendar Grid */}
         <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
-          <div className="grid grid-cols-7 border-b border-slate-200 bg-slate-50/50">
+          <div className="grid grid-cols-7 border-b border-slate-200  bg-slate-50/50">
             {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map((day) => (
               <div
                 key={day}
-                className="py-3 text-center text-xs font-bold text-slate-500 uppercase tracking-widest"
+                className="py-4 text-center text-sm font-bold text-slate-700 uppercase"
               >
                 {day}
               </div>
             ))}
           </div>
-          <div className="grid grid-cols-7 auto-rows-[120px]">
+          <div className="grid grid-cols-7 auto-rows-[120px] ">
             {calendarDays.map((date, idx) => {
               const dateStr = date ? date.toISOString().split("T")[0] : null;
               const dayEvents = dateStr
@@ -189,13 +189,13 @@ const EventsPage: React.FC = () => {
                       setIsModalOpen(true);
                     }
                   }}
-                  className={`border-r border-b border-slate-100 p-2 group hover:bg-slate-50/80 transition-all cursor-pointer relative ${!date ? "bg-slate-50/30" : ""}`}
+                  className={`flex flex-col items-center justify-center border-r border-b border-slate-100 p-2 group hover:bg-slate-50/80 transition-all cursor-pointer relative ${!date ? "bg-slate-50/30" : ""}`}
                 >
                   {date && (
                     <>
                       <div className="flex justify-between items-start">
                         <span
-                          className={`text-sm font-semibold inline-flex items-center justify-center w-7 h-7 rounded-full ${isToday ? "bg-indigo-600 text-white" : "text-slate-700"}`}
+                          className={`text-sm font-semibold inline-flex items-center  justify-center w-7 h-7 rounded-full ${isToday ? "bg-indigo-600 text-white" : "text-slate-700"}`}
                         >
                           {date.getDate()}
                         </span>
@@ -261,7 +261,7 @@ const EventsPage: React.FC = () => {
                   })}
                 </p>
                 <h3
-                  className="font-bold text-slate-900 group-hover:text-indigo-600 transition-colors cursor-pointer"
+                  className="font-bold text-slate-700 group-hover:text-indigo-600 transition-colors cursor-pointer"
                   onClick={() => {
                     setSelectedEvent(event);
                     setIsModalOpen(true);
@@ -270,18 +270,18 @@ const EventsPage: React.FC = () => {
                   {event.title}
                 </h3>
                 <div className="mt-2 space-y-1.5">
-                  <div className="flex items-center gap-2 text-xs text-slate-500">
+                  <div className="flex items-center gap-2 text-sm text-slate-500">
                     <Clock size={14} />
                     {event.startTime} - {event.endTime}
                   </div>
                   {event.location && (
-                    <div className="flex items-center gap-2 text-xs text-slate-500">
+                    <div className="flex items-center gap-2 text-sm text-slate-500">
                       <MapPin size={14} />
                       {event.location}
                     </div>
                   )}
                   {event.attendees && event.attendees.length > 0 && (
-                    <div className="flex items-center gap-2 text-xs text-slate-500">
+                    <div className="flex items-center gap-2 text-sm text-slate-500">
                       <UsersIcon size={14} />
                       {event.attendees.length} Attendee
                       {event.attendees.length > 1 ? "s" : ""}

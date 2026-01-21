@@ -230,19 +230,19 @@ export default function TodosPage() {
           <table className="w-full text-left">
             <thead className="bg-slate-50 border-b border-slate-200">
               <tr>
-                <th className="px-6 py-4 text-xs font-semibold text-slate-500 uppercase tracking-wider">
+                <th className="px-6 py-4  font-semibold text-slate-800   ">
                   Task Details
                 </th>
-                <th className="px-6 py-4 text-xs font-semibold text-slate-500 uppercase tracking-wider">
+                <th className="px-6 py-4  font-semibold text-slate-800   ">
                   Status
                 </th>
-                <th className="px-6 py-4 text-xs font-semibold text-slate-500 uppercase tracking-wider">
+                <th className="px-6 py-4  font-semibold text-slate-800   ">
                   Priority
                 </th>
-                <th className="px-6 py-4 text-xs font-semibold text-slate-500 uppercase tracking-wider">
+                <th className="px-6 py-4  font-semibold text-slate-800   ">
                   Category
                 </th>
-                <th className="px-6 py-4 text-xs font-semibold text-slate-500 uppercase tracking-wider text-right">
+                <th className="px-6 py-4  font-semibold text-slate-800    text-right">
                   Actions
                 </th>
               </tr>
@@ -257,7 +257,7 @@ export default function TodosPage() {
                     <td className="px-6 py-4">
                       <div className="flex flex-col space-y-2">
                         <span
-                          className={`font-semibold text-slate-900 ${todo.status === Status.COMPLETED ? "line-through text-slate-400" : ""}`}
+                          className={`font-semibold  text-slate-700 ${todo.status === Status.COMPLETED ? "line-through text-slate-400" : ""}`}
                         >
                           {todo.title}
                         </span>
@@ -297,7 +297,7 @@ export default function TodosPage() {
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
                       <span
-                        className={`px-2.5 py-1 rounded-md text-xs font-bold ${
+                        className={`px-2.5 py-1 rounded-md text-xs font-semibold ${
                           todo.priority === Priority.HIGH
                             ? "bg-rose-100 text-rose-700"
                             : todo.priority === Priority.MEDIUM
