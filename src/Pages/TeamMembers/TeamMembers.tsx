@@ -394,7 +394,7 @@ const TeamMembers: React.FC = () => {
       </div> */}
 
       {/* member card */}
-      <div className="grid grid-cols-4 gap-8 ">
+      <div className="grid grid-cols-4 gap-8 my-10 ">
         {filteredTeam.map((member) => (
           <div key={member.id} className="group rounded-xl">
             <div className="w-full h-60 relative rounded-t-xl overflow-hidden">
@@ -414,8 +414,10 @@ const TeamMembers: React.FC = () => {
             <div className="bg-white px-4 py-3  space-y-2 rounded-b-xl">
               <h3 className="font-semibold text-lg ">{member.name}</h3>
 
-              <div className="flex justify-between items-center">
-                <p className="font-medium ">{member.jobTitle}</p>
+              <div className="flex justify-between items-center flex-wrap">
+                <p className="font-medium whitespace-nowrap">
+                  {member.jobTitle}
+                </p>
                 <p className="text-sm bg-blue-100 text-blue-600 font-medium py-1 px-4 rounded-lg">
                   {member.department}
                 </p>
