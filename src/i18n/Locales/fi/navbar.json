@@ -1,0 +1,22 @@
+{
+  "sidebar": {
+    "dashboard": "Kojelauta",
+    "todo": "Tehtävät",
+    "events": "Tapahtumat",
+    "projects": "Projektit",
+    "tasks": "Tehtävät",
+    "emailMarketing": "Sähköpostimarkkinointi",
+    "notes": "Muistiinpanot",
+    "messages": "Viestit",
+    "teams": "Tiimit",
+    "teamMembers": "Tiimin jäsenet",
+    "timeCards": "Aikaleimat",
+    "leave": "Vapaa",
+    "timeline": "Aikajana",
+    "announcements": "Ilmoitukset",
+    "reports": "Raportit",
+    "files": "Tiedostot",
+    "helpSupport": "Ohje & tuki",
+    "help": "Ohje"
+  }
+}

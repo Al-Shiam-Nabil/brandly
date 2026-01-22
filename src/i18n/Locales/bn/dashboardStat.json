@@ -1,0 +1,20 @@
+{
+  "stats": {
+    "open_tasks": {
+      "title": "আমার খোলা কাজ",
+      "value": "১২টি কাজ"
+    },
+    "todays_events": {
+      "title": "আজকের ইভেন্ট",
+      "value": "৪টি ইভেন্ট"
+    },
+    "new_posts": {
+      "title": "নতুন পোস্ট",
+      "value": "১২টি পোস্ট"
+    },
+    "active_projects": {
+      "title": "চলমান প্রজেক্ট",
+      "value": "৮টি প্রজেক্ট"
+    }
+  }
+}

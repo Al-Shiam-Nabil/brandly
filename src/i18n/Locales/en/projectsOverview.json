@@ -1,0 +1,18 @@
+{
+  "projectsOverview": "Projects Overview",
+  "total_projects": "Total Projects",
+  "projects": {
+    "active": {
+      "name": "Active",
+      "value": 12
+    },
+    "on_hold": {
+      "name": "On Hold",
+      "value": 3
+    },
+    "completed": {
+      "name": "Completed",
+      "value": 24
+    }
+  }
+}

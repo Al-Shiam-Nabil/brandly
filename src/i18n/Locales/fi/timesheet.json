@@ -1,0 +1,11 @@
+{
+  "timesheet": {
+    "title": "Omat työtuntikirjaukset",
+    "trend": "Viimeiset 10 päivän trendi",
+    "average_daily": "Keskim. päivittäin",
+    "growth": "Kasvu",
+    "hours_spent": "tunteja käytetty",
+    "report_range": "Näytetään aikatoiminta 16. lokakuuta - 25. lokakuuta",
+    "download_report": "Lataa PDF-raportti"
+  }
+}

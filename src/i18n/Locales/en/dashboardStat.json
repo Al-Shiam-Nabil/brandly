@@ -1,0 +1,20 @@
+{
+  "stats": {
+    "open_tasks": {
+      "title": "My open tasks",
+      "value": "128 tasks"
+    },
+    "todays_events": {
+      "title": "Today's Events",
+      "value": "4 events"
+    },
+    "new_posts": {
+      "title": "New Posts",
+      "value": "12 posts"
+    },
+    "active_projects": {
+      "title": "Active Projects",
+      "value": "8 projects"
+    }
+  }
+}

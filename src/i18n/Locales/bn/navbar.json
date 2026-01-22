@@ -1,0 +1,22 @@
+{
+  "sidebar": {
+    "dashboard": "ড্যাশবোর্ড",
+    "todo": "করার কাজ",
+    "events": "ইভেন্টস",
+    "projects": "প্রজেক্টস",
+    "tasks": "টাস্ক",
+    "emailMarketing": "ইমেইল মার্কেটিং",
+    "notes": "নোটস",
+    "messages": "মেসেজেস",
+    "teams": "টিমস",
+    "teamMembers": "টিম মেম্বারস",
+    "timeCards": "টাইম কার্ডস",
+    "leave": "লিভ",
+    "timeline": "টাইমলাইন",
+    "announcements": "ঘোষণা",
+    "reports": "রিপোর্টস",
+    "files": "ফাইলস",
+    "helpSupport": "হেল্প & সাপোর্ট",
+    "help": "হেল্প"
+  }
+}

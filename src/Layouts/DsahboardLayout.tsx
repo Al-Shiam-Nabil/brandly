@@ -17,6 +17,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { NavLink, Outlet } from "react-router";
 import BarndlyLogo from "../assets/brandlyLogo.png";
 import LogoIcon from "../assets/logoIcon.png";
@@ -36,88 +37,88 @@ type SidebarTypes = {
 };
 const sidebarLinks: SidebarTypes[] = [
   {
-    label: "Dashboard",
+    label: "sidebar.dashboard",
     path: "/dashboard",
     icon: Monitor,
   },
   {
-    label: "to do",
+    label: "sidebar.todo",
     path: "/dashboard/todos",
     icon: SquareCheckBig,
   },
   {
-    label: "Events",
+    label: "sidebar.events",
     path: "/dashboard/events",
     icon: Calendar,
   },
   {
-    label: "Projects",
+    label: "sidebar.projects",
     path: "/dashboard/projects",
     icon: Command,
   },
   {
-    label: "Tasks",
+    label: "sidebar.tasks",
     path: "/dashboard/tasks",
     icon: CircleCheckBig,
   },
   {
-    label: "Email Marketing",
+    label: "sidebar.emailMarketing",
     path: "/uhfuiwef",
     icon: Mail,
   },
   {
-    label: "Notes",
+    label: "sidebar.notes",
     path: "/dashboard/notes",
     icon: PanelBottom,
   },
   {
-    label: "Messages",
+    label: "sidebar.messages",
     path: "/juhdfufh",
     icon: MessageCircle,
   },
   {
-    label: "Teams",
+    label: "sidebar.teams",
     icon: Users,
     subMenus: [
       {
-        label: "Team members",
+        label: "sidebar.teamMembers",
         path: "/dashboard/team-members",
       },
       {
-        label: "Time cards",
+        label: "sidebar.timeCards",
         path: "/jwehu",
       },
       {
-        label: "Leave",
+        label: "sidebar.leave",
         path: "/dashboard/leave",
       },
       {
-        label: "timeline",
+        label: "sidebar.timeline",
         path: "/uidg",
       },
       {
-        label: "Announcements",
+        label: "sidebar.announcements",
         path: "/oihaseyh",
       },
     ],
   },
   {
-    label: "Reports",
+    label: "sidebar.reports",
     path: "/dashboard/reports",
     icon: PieChart,
   },
   {
-    label: "Files",
+    label: "sidebar.files",
     path: "/dashboard/files",
     icon: Folder,
   },
   {
-    label: "Help & Support",
+    label: "sidebar.helpSupport",
 
     icon: CircleQuestionMark,
     subMenus: [
       {
-        label: "Help",
+        label: "sidebar.help",
         path: "/uqw",
       },
     ],
@@ -128,6 +129,7 @@ export default function DsahboardLayout() {
   const { isOpen, isMobile } = useDashboardHook();
 
   const [subMenuIndex, setsubMenuIndex] = useState<number | null>(null);
+  const { t } = useTranslation();
 
   return (
     <div className="flex ">
@@ -176,7 +178,7 @@ export default function DsahboardLayout() {
 
                         {/* link Name */}
 
-                        {isOpen && <div>{sidebarLink.label}</div>}
+                        {isOpen && <div>{t(sidebarLink.label)}</div>}
                       </div>
 
                       {isOpen && (
@@ -212,7 +214,7 @@ export default function DsahboardLayout() {
                                   </div>
 
                                   {/* link Name */}
-                                  <div>{submenu.label}</div>
+                                  <div>{t(submenu.label)}</div>
                                 </div>
                               </NavLink>
                             </div>
@@ -238,11 +240,11 @@ export default function DsahboardLayout() {
                   </div>
 
                   {/* link Name */}
-                  {isOpen && <div>{sidebarLink.label}</div>}
+                  {isOpen && <div>{t(sidebarLink.label)}</div>}
 
                   {!isOpen && (
                     <div className="absolute opacity-0 invisible group-hover:visible group-hover:opacity-100 left-[130%] bg-primary font-medium text-white px-3.5 rounded-lg py-2.5 transition-all duration-300 ease-in-out">
-                      {sidebarLink.label}
+                      {t(sidebarLink.label)}
                     </div>
                   )}
                 </NavLink>
@@ -299,7 +301,7 @@ export default function DsahboardLayout() {
 
                         {/* link Name */}
 
-                        {isOpen && <div>{sidebarLink.label}</div>}
+                        {isOpen && <div>{t(sidebarLink.label)}</div>}
                       </div>
 
                       {isOpen && (
@@ -327,7 +329,9 @@ export default function DsahboardLayout() {
                                   {" "}
                                   <div className="flex items-center gap-3 ">
                                     {/* link Name */}
-                                    <div className="px-4">{submenu.label}</div>
+                                    <div className="px-4">
+                                      {t(submenu.label)}
+                                    </div>
                                   </div>
                                 </NavLink>
                               </div>
@@ -357,7 +361,7 @@ export default function DsahboardLayout() {
                                   </div>
 
                                   {/* link Name */}
-                                  <div>{submenu.label}</div>
+                                  <div>{t(submenu.label)}</div>
                                 </div>
                               </NavLink>
                             </div>
@@ -383,11 +387,11 @@ export default function DsahboardLayout() {
                   </div>
 
                   {/* link Name */}
-                  {isOpen && <div>{sidebarLink.label}</div>}
+                  {isOpen && <div>{t(sidebarLink.label)}</div>}
 
                   {!isOpen && (
                     <div className="absolute opacity-0 invisible group-hover:visible group-hover:opacity-100 left-[130%] bg-primary font-medium text-white px-3.5 rounded-lg py-2.5 transition-all duration-300 ease-in-out">
-                      {sidebarLink.label}
+                      {t(sidebarLink.label)}
                     </div>
                   )}
                 </NavLink>

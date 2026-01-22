@@ -1,0 +1,22 @@
+{
+  "sidebar": {
+    "dashboard": "Dashboard",
+    "todo": "To Do",
+    "events": "Events",
+    "projects": "Projects",
+    "tasks": "Tasks",
+    "emailMarketing": "Email Marketing",
+    "notes": "Notes",
+    "messages": "Messages",
+    "teams": "Teams",
+    "teamMembers": "Team Members",
+    "timeCards": "Time Cards",
+    "leave": "Leave",
+    "timeline": "Timeline",
+    "announcements": "Announcements",
+    "reports": "Reports",
+    "files": "Files",
+    "helpSupport": "Help & Support",
+    "help": "Help"
+  }
+}

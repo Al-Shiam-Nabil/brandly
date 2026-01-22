@@ -1,0 +1,18 @@
+{
+  "projectsOverview": "Projektien yleiskatsaus",
+  "total_projects": "Projektien yhteensä",
+  "projects": {
+    "active": {
+      "name": "Aktiivinen",
+      "value": 12
+    },
+    "on_hold": {
+      "name": "Keskeytetty",
+      "value": 3
+    },
+    "completed": {
+      "name": "Valmis",
+      "value": 24
+    }
+  }
+}

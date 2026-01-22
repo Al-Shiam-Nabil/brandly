@@ -1,0 +1,18 @@
+{
+  "projectsOverview": "প্রজেক্টস ওভারভিউ",
+  "total_projects": "মোট প্রজেক্ট",
+  "projects": {
+    "active": {
+      "name": "চলমান",
+      "value": 12
+    },
+    "on_hold": {
+      "name": "স্থগিত",
+      "value": 3
+    },
+    "completed": {
+      "name": "সম্পন্ন",
+      "value": 24
+    }
+  }
+}

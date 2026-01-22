@@ -1,0 +1,11 @@
+{
+  "timesheet": {
+    "title": "My Timesheets",
+    "trend": "Last 10 Days Trend",
+    "average_daily": "Avg. Daily",
+    "growth": "Growth",
+    "hours_spent": "hours spent",
+    "report_range": "Showing time activity from 16 Oct to 25 Oct",
+    "download_report": "Download PDF Report"
+  }
+}

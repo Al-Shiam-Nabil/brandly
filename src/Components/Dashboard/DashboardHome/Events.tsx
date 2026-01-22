@@ -36,9 +36,9 @@ export default function Events() {
           <div className="w-10 h-10 bg-indigo-50 rounded-xl flex items-center justify-center">
             <Calendar className="w-5 h-5 text-indigo-600" />
           </div>
-          <h2 className="text-lg font-bold text-slate-800">Upcoming Events</h2>
+          <h2 className="text-lg font-bold text-slate-700">Upcoming Events</h2>
         </div>
-        <button className="flex items-center gap-2 px-4 py-2 bg-indigo-600 text-white text-xs font-bold rounded-xl hover:bg-indigo-700 transition-all active:scale-95 shadow-sm">
+        <button className="flex items-center gap-2 px-4 py-3 bg-indigo-600 text-white text-sm font-semibold rounded-xl hover:bg-indigo-700 transition-all active:scale-95 shadow-sm cursor-pointer">
           <Plus className="w-4 h-4" />
           Add Event
         </button>
@@ -55,7 +55,7 @@ export default function Events() {
               >
                 {/* Minimal Date Indicator */}
                 <div className="flex flex-col items-center justify-center min-w-[56px] h-14 bg-slate-50 rounded-xl border border-slate-100 group-hover:bg-white group-hover:border-indigo-100 transition-colors">
-                  <span className="text-[10px] font-bold text-slate-400 uppercase tracking-tighter leading-none">
+                  <span className="text-[12px] font-bold text-slate-500 uppercase  leading-none">
                     {event.date.split(" ")[0]}
                   </span>
                   <span className="text-xl font-black text-slate-800 leading-tight">
@@ -65,15 +65,15 @@ export default function Events() {
 
                 {/* Info */}
                 <div className="flex-1 min-w-0">
-                  <h4 className="text-sm font-bold text-slate-900 truncate group-hover:text-indigo-600 transition-colors">
+                  <h4 className=" font-bold text-slate-900 truncate group-hover:text-indigo-600 transition-colors">
                     {event.title}
                   </h4>
                   <div className="flex items-center gap-4 mt-1">
-                    <div className="flex items-center gap-1.5 text-[11px] font-medium text-slate-500">
-                      <Clock className="w-3.5 h-3.5 text-slate-400" />
+                    <div className="flex items-center gap-1.5 text-sm font-medium text-slate-500">
+                      <Clock className="w-3.5 h-3.5 text-slate-500" />
                       {event.time}
                     </div>
-                    <div className="flex items-center gap-1.5 text-[11px] font-medium text-slate-500">
+                    <div className="flex items-center gap-1.5 text-[14px] font-medium text-slate-500">
                       <MapPin className="w-3.5 h-3.5 text-slate-400" />
                       {event.location}
                     </div>
@@ -109,10 +109,10 @@ export default function Events() {
       {/* Footer / Summary */}
       {events.length > 0 && (
         <div className="px-6 py-4 bg-slate-50 border-t border-slate-100 flex items-center justify-between">
-          <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">
+          <span className="text-sm font-bold text-slate-500 uppercase">
             {events.length} Event{events.length > 1 ? "s" : ""} scheduled
           </span>
-          <button className="text-[11px] font-bold text-indigo-600 hover:underline">
+          <button className="text-sm font-bold text-indigo-600 hover:underline">
             View Full Calendar
           </button>
         </div>

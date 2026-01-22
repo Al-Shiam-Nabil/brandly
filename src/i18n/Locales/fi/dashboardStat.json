@@ -1,0 +1,20 @@
+{
+  "stats": {
+    "open_tasks": {
+      "title": "Avoimet tehtävät",
+      "value": "128 tehtävää"
+    },
+    "todays_events": {
+      "title": "Tämän päivän tapahtumat",
+      "value": "4 tapahtumaa"
+    },
+    "new_posts": {
+      "title": "Uudet julkaisut",
+      "value": "12 julkaisua"
+    },
+    "active_projects": {
+      "title": "Aktiiviset projektit",
+      "value": "8 projektia"
+    }
+  }
+}

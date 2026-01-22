@@ -1,4 +1,5 @@
 import { Calendar, ChevronRight, Timer, TrendingUp } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import {
   Area,
   AreaChart,
@@ -23,6 +24,7 @@ const dailyStats = [
 ];
 
 export default function MyTimeSheet() {
+  const { t } = useTranslation("timesheet");
   return (
     <div className="bg-white p-8 rounded-xl shadow-sm border border-slate-100 h-[570px] w-full flex flex-col transition-all hover:shadow-md">
       {/* Header with quick stats */}
@@ -32,28 +34,28 @@ export default function MyTimeSheet() {
             <Timer className="w-6 h-6 text-white" />
           </div>
           <div>
-            <h2 className="text-lg font-bold text-slate-900 tracking-tight">
-              My Timesheets
+            <h2 className="text-lg font-bold text-slate-700 ">
+              {t("timesheet.title")}
             </h2>
-            <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mt-0.5 flex items-center gap-1">
-              <Calendar className="w-3 h-3" /> Last 10 Days Trend
+            <p className="text-xs font-semibold text-slate-500 uppercase  mt-0.5 flex items-center gap-1">
+              <Calendar className="w-3 h-3" /> {t("timesheet.trend")}
             </p>
           </div>
         </div>
 
         <div className="flex items-center gap-6">
           <div className="text-right">
-            <p className="text-[10px] font-black text-slate-400 uppercase tracking-tighter">
-              Avg. Daily
+            <p className="text-[12px] font-semibold text-slate-500 uppercase ">
+              {t("timesheet.average_daily")}
             </p>
-            <p className="text-xl font-black text-slate-900">6.4h</p>
+            <p className="text-xl font-bold text-slate-700">6.4h</p>
           </div>
           <div className="h-10 w-px bg-slate-100"></div>
           <div className="text-right">
-            <p className="text-[10px] font-black text-emerald-500 uppercase tracking-tighter flex items-center justify-end gap-1">
-              <TrendingUp className="w-3 h-3" /> Growth
+            <p className="text-[12px] font-black text-emerald-500 uppercase  flex items-center justify-end gap-1">
+              <TrendingUp className="w-3 h-3" /> {t("timesheet.growth")}
             </p>
-            <p className="text-xl font-black text-slate-900">+14%</p>
+            <p className="text-xl font-bold text-slate-700">+14%</p>
           </div>
         </div>
       </div>
@@ -115,12 +117,12 @@ export default function MyTimeSheet() {
 
       <div className="mt-5 pt-6 border-t border-slate-50 flex items-center justify-between">
         <p className="text-sm font-medium text-slate-500">
-          Showing time activity from{" "}
-          <span className="font-bold text-slate-900">Oct 16</span> to{" "}
-          <span className="font-bold text-slate-900">Oct 25</span>
+          {t("timesheet.report_range")}
+          {/* <span className="font-bold text-slate-900">Oct 16</span> to{" "}
+          <span className="font-bold text-slate-900">Oct 25</span> */}
         </p>
         <button className="text-indigo-600 font-bold text-sm flex items-center gap-1 hover:gap-2 transition-all">
-          Download PDF Report <ChevronRight className="w-4 h-4" />
+          {t("timesheet.download_report")} <ChevronRight className="w-4 h-4" />
         </button>
       </div>
     </div>

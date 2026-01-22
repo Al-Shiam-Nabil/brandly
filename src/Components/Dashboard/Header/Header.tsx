@@ -3,7 +3,6 @@ import {
   CircleCheckBig,
   CirclePlus,
   Clock4,
-  Globe,
   LayoutGrid,
   Mail,
   Menu,
@@ -13,6 +12,7 @@ import {
 
 import DefaultUser from "../../../assets/defaultUser.webp";
 import useDashboardHook from "../../../Hooks/useDashboardHook";
+import LanguageSwitcher from "../../LanguageSwitcher/LanguageSwitcher";
 
 export default function Header() {
   const { isOpen, setIsOpen, isMobile } = useDashboardHook();
@@ -53,8 +53,11 @@ export default function Header() {
         <button className="cursor-pointer">
           <CirclePlus size={20} stroke="#0000008c" />
         </button>
+
+        {/* multiple language */}
         <button className="cursor-pointer">
-          <Globe size={20} stroke="#0000008c" />
+          {/* <Globe size={20} stroke="#0000008c" /> */}
+          <LanguageSwitcher />
         </button>
         <button className="cursor-pointer">
           <Clock4 size={20} stroke="#0000008c" />

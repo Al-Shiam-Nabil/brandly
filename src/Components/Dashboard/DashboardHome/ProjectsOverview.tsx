@@ -1,44 +1,58 @@
 import { Briefcase, Lock, Plus } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import { Cell, Pie, PieChart, ResponsiveContainer, Tooltip } from "recharts";
-
-/* ---------- Data ---------- */
-const projectData = [
-  { name: "Active", value: 12, color: "#4f46e5" },
-  { name: "On Hold", value: 3, color: "#f59e0b" },
-  { name: "Completed", value: 24, color: "#10b981" },
-];
-
-const totalProjects = projectData.reduce((sum, item) => sum + item.value, 0);
-
-/* ---------- Simple Tooltip ---------- */
-const CustomTooltip = ({ active, payload }: any) => {
-  if (!active || !payload || !payload.length) return null;
-
-  const { name, value, color } = payload[0].payload;
-
-  return (
-    <div className="bg-white px-3 py-2 rounded-md border shadow-sm text-sm">
-      <div className="flex items-center gap-2">
-        <span
-          className="w-2 h-2 rounded-full"
-          style={{ backgroundColor: color }}
-        />
-        <span className="font-medium text-slate-800">{name}</span>
-      </div>
-      <div className="text-slate-600">Projects: {value}</div>
-    </div>
-  );
-};
-
-/* ---------- Pie Label ---------- */
-const renderLabel = ({ name, percent }: { name: string; percent: number }) =>
-  `${name} ${(percent * 100).toFixed(0)}%`;
 
 /* ---------- Component ---------- */
 export default function ProjectsOverview() {
+  const { t } = useTranslation("projectsOverview");
+
+  const projectData = [
+    {
+      name: t("projects.active.name"),
+      value: 12,
+      color: "#4f46e5",
+    },
+    {
+      name: t("projects.on_hold.name"),
+      value: 10,
+      color: "#f59e0b",
+    },
+    {
+      name: t("projects.completed.name"),
+      value: 5,
+      color: "#10b981",
+    },
+  ];
+
+  const totalProjects = projectData.reduce((sum, item) => sum + item.value, 0);
+
+  /* ---------- Simple Tooltip ---------- */
+  const CustomTooltip = ({ active, payload }: any) => {
+    if (!active || !payload || !payload.length) return null;
+
+    const { name, value, color } = payload[0].payload;
+
+    return (
+      <div className="bg-white px-3 py-2 rounded-md border shadow-sm text-sm">
+        <div className="flex items-center gap-2">
+          <span
+            className="w-2 h-2 rounded-full"
+            style={{ backgroundColor: color }}
+          />
+          <span className="font-medium text-slate-800">{name}</span>
+        </div>
+        <div className="text-slate-600">Projects: {value}</div>
+      </div>
+    );
+  };
+
+  /* ---------- Pie Label ---------- */
+  const renderLabel = ({ name, percent }: { name: string; percent: number }) =>
+    `${name} ${(percent * 100).toFixed(0)}%`;
+
   return (
     <div className="bg-white p-6 w-full rounded-xl shadow-sm border border-slate-100">
-      <SectionHeader title="Projects Overview" icon={Briefcase} />
+      <SectionHeader title={t("projectsOverview")} icon={Briefcase} />
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
         {/* Chart */}
@@ -74,7 +88,7 @@ export default function ProjectsOverview() {
                   {totalProjects}
                 </tspan>
                 <tspan x="50%" dy="18" className="fill-slate-500 text-xs">
-                  Total Projects
+                  {t("total_projects")}
                 </tspan>
               </text>
 
